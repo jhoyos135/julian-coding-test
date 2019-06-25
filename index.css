@@ -10,25 +10,21 @@
     margin-top: 20px;
 }
 
-.table_wrapper {
-  padding: 25px;
-  margin: 15px;
-}
-
 #table {
   padding-top: 15px;
-  display: flex;
-  justify-content: center;
 }
 
 #table table {
     width: 100%;
 }
 
-#form {
+#form,
+#form2 {
     display: flex;
     flex-direction: column;
-    width: 550px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin: 25px auto;
     text-transform:uppercase;
     background-color: #a7c6fc;
@@ -48,10 +44,21 @@
 }
 
 .input_wrapper input[type="text"] {
-  width: 350px;
+  width: 100%;
 }
 
-#form input:not[type="checkbox"] {
+.input_wrapper label {
+    width: 50%;
+}
+
+.message {
+    position: fixed !important;
+    bottom: 0;
+    width: 25% !important;
+}
+
+#form input:not[type="checkbox"],
+#form2 input:not[type="checkbox"] {
     width: 100%;
     color: #555555;
     line-height: 1.5;
@@ -75,4 +82,16 @@ input[type="checkbox"] {
     border-radius: 8px;
     background: #bfb;
     transition: all 0.4s;
+    cursor: pointer;
+}
+#update {
+    width: 120px;
+    height: 40px;
+    padding: 0 15px;
+    margin: 15px auto;
+    border: 0;
+    border-radius: 8px;
+    background: #bfb;
+    transition: all 0.4s;
+    cursor: pointer;
 }
