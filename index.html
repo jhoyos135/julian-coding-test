@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+    <script src="ContactsData.js"></script>
+
+
+</head>
+
+<body>
+    <div id="instructions">
+        <h1>Instructions</h1>
+        <p>1. Create a table of contacts from the ContactsData.js file. The table should include the following columns:
+            <b>Name, Phone, Email, Nick Name </b>.
+            In each row, add a 'delete' and 'edit' button. If the contact is defined as 'Favorite', color the
+            contact's row in yellow.
+            <img src="sample.jpg" alt="table_example" width='100%' />
+        </p>
+        <p>
+            2. Clicking on the 'delete' button will remove the relevant contact from the list.
+            Clicking on the 'edit' button will allow the user to edit the contact.
+        </p>
+        <p>
+            3. Configure adding of new contacts with the form. When you fill in the form and press the 'Add' button, the
+            new friends details should be
+            added to the table.
+        </p>
+        <p>
+            4. Validate that the user can't submit the form with empty fields.
+        </p>
+
+
+
+        <p>Good Luck!</p>
+    </div>
+
+    <div id="main">
+        <div class="table_wrapper">
+            <h2>Contacts List</h2>
+            <div id="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th> Phone</th>
+                            <th>Email</th>
+                            <th>Nick Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="appendTable">
+                        
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+
+        <form id="form">
+            <div class="input_wrapper" >
+                <label for="name">Name</label>
+                <input type="text" aria-label="name" id="name" name="name">
+            </div>
+            <div class="input_wrapper">
+                <label for="phone">Phone</label>
+                <input type="text" aria-label="phone" id="phone" name="phone">
+            </div>
+            <div class="input_wrapper">
+                <label for="email">Email</label>
+                <input type="text" aria-label="email" id="email" name="email">
+            </div>
+
+            <div class="input_wrapper">
+                <label for="nickname">Nick Name</label>
+                <input type="text" aria-label="nickname" id="nickname" name="nickname">
+            </div>
+            <div class="chekbox_wrapper">
+                <input type="checkbox" aria-label="favorite" id="favorite" name="favorite">
+                <label for="favorite">Favorite</label>
+            </div>
+            <button id="add" value="add"  >Add</button>
+        </form>
+
+    </div>
+    <script>
+        
+    </script>
+
+</body>
+
+</html>
