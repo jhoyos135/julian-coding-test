@@ -59,22 +59,22 @@ class Init {
         });
 
         for(let i in newContactList) {
-            let list = newContactList[i];
+            const {id, name, phone, email, nickname, favorite} = newContactList[i];
             let tableRow = document.createElement('tr');
-            tableRow.setAttribute('data-id', list.id);
+            tableRow.setAttribute('data-id', id);
             tableRow.classList.add('custom_row');
-            let favoriteTd = list.favorite;
+            let favoriteTd = favorite;
             if(favoriteTd === 'true') {
                 tableRow.style.backgroundColor = 'yellow';
                 tableRow.classList.add('favorite');
             };
             tableRow.innerHTML += `
-                    <td name='name' value='${list.name}'>${list.name}</td>
-                    <td name='phone' value='${list.phone}'>${list.phone}</td>
-                    <td name='email' value='${list.email}'>${list.email}</td>
-                    <td name='nickname' value='${list.nickname}'>${list.nickname}</td>
+                    <td name='name' value='${name}'>${name}</td>
+                    <td name='phone' value='${phone}'>${phone}</td>
+                    <td name='email' value='${email}'>${email}</td>
+                    <td name='nickname' value='${nickname}'>${nickname}</td>
                     <td> 
-                        <button data-id='${list.id}' class='btn btn-info edit' data-target='#edit' data-toggle='modal'> 
+                        <button data-id='${id}' class='btn btn-info edit' data-target='#edit' data-toggle='modal'> 
                         edit
                         </button>
                     </td>
@@ -214,7 +214,7 @@ class UI {
             i.forEach(target => {
                 let name = target.getAttribute('name');
                 let contactObj = {
-                    [name]: target.innerHTML
+                    [name]: target.textContent
                 }
                 valuesArr.push(contactObj);
             });
@@ -272,7 +272,7 @@ let ui = new UI();
 // event listeners
 document.addEventListener('DOMContentLoaded', () => {
     init.getData();
-    init.addClasses()
+    init.addClasses();
     document.querySelector('#form').addEventListener('submit', init.validation );
     document.querySelector('#form2').addEventListener('submit', init.updateValidation );
     

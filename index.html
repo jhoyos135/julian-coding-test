@@ -22,7 +22,7 @@
             <b>Name, Phone, Email, Nick Name </b>.
             In each row, add a 'delete' and 'edit' button. If the contact is defined as 'Favorite', color the
             contact's row in yellow.
-            <img src="sample.jpg" alt="table_example" width='100%' />
+            <img src="sample.jpg" alt="table_example" width='100%'/>
         </p>
         <p>
             2. Clicking on the 'delete' button will remove the relevant contact from the list.
@@ -90,12 +90,12 @@
         </form>
 
 
-
+        <!--  -->
         <div class="modal fade" id="edit" tabindex="-1" role="dialog"  aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"></h2>
+                                <h2 class="modal-title">Edit</h2>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -104,6 +104,10 @@
         
         <!--  -->
         <form id="form2" class="container">
+            <div class="input_wrapper">
+                <label for="id2">id</label>
+                <input type="text" aria-label="favorite" id="id2" name="id2" disabled>
+            </div>
                 <div class="input_wrapper" >
                     <label for="name">Name</label>
                     <input type="text" aria-label="name" id="name2" name="name2">
@@ -120,10 +124,6 @@
                 <div class="input_wrapper">
                     <label for="nickname">Nick Name</label>
                     <input type="text" aria-label="nickname" id="nickname2" name="nickname2">
-                </div>
-                <div class="input_wrapper">
-                    <label for="id2">id</label>
-                    <input type="text" aria-label="favorite" id="id2" name="id2" disabled>
                 </div>
                 <div class="chekbox_wrapper">
                     <input type="checkbox" aria-label="favorite2" id="favorite2" name="favorite2">

@@ -55,6 +55,7 @@
     position: fixed !important;
     bottom: 0;
     width: 25% !important;
+    z-index: 99999;
 }
 
 #form input:not[type="checkbox"],
