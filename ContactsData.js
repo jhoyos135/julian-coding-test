@@ -131,41 +131,40 @@ class Init {
 
     updateValidation(e) {
         e.preventDefault();
-        const name2 = document.querySelector('#name2').value;
-        const phone2 = document.querySelector('#phone2').value;
-        const email2 = document.querySelector('#email2').value;
-        const nickname2 = document.querySelector('#nickname2').value;
-        const id2 = document.querySelector('#id2').value;
+        const name = document.querySelector('#name2').value;
+        const phone = document.querySelector('#phone2').value;
+        const email = document.querySelector('#email2').value;
+        const nickname = document.querySelector('#nickname2').value;
+        const id = document.querySelector('#id2').value;
+        const favorite = document.querySelector('#favorite2');
+
 
         // checks if the favorite is checked or not
-        if(favorite2.checked) {
-            favorite2.value = 'true';
+        if(favorite.checked) {
+            favorite.value = 'true';
         } else {
-            favorite2.value = 'false';
+            favorite.value = 'false';
         }
 
         const formUpdateObj = {
-            id: id2,
-            name: name2,
-            phone: phone2,
-            email: email2,
-            nickname: nickname2,
-            favorite: favorite2.value
+            id: id,
+            name: name,
+            phone: phone,
+            email: email,
+            nickname: nickname,
+            favorite: favorite.value
         };
 
         // this validation can get very complex, here I'm only checking if the input values are empty and if the email is correct
         const RegMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if(name2 === '' || phone2 === '' || email2 === '' || nickname2 === '') {
+        if(name === '' || phone === '' || email === '' || nickname === '') {
             init.message('Missing values', 'alert alert-danger');
-        } else if(!RegMail.test(email2)) {
+        } else if(!RegMail.test(email)) {
             init.message('Please add a valid email', 'alert alert-danger');
         }else {
             // submit the form after validation
             ui.submitForm(formUpdateObj);
-            // document.querySelector('#edit').modal('hide')
-            // reset the form after submission
-            form2.reset();
         }
     }
 
@@ -240,13 +239,13 @@ class UI {
         const email = document.querySelector('#email2');
         const nickname = document.querySelector('#nickname2');
         const favorite = document.querySelector('#favorite2');
-        const id2 = document.querySelector('#id2');
+        const id = document.querySelector('#id2');
 
         name.value = obj.name;
         phone.value = obj.phone;
         email.value = obj.email;
         nickname.value = obj.nickname;
-        id2.value = obj.id;
+        id.value = obj.id;
         if(obj.favorite === 'true') {
             favorite.checked = true
         } else {
