@@ -23,14 +23,6 @@ var contacts = [
         "email": "joey@doesnt-share-food.com",
         "nickname": "Baby Kangaroo Tribbiani",
         "favorite": "true"
-    },
-    {
-        'id': '3',
-        "name":"Joey Tribbiani",
-        "phone": "012-123423543",
-        "email": "joey@doesnt-share-food.com",
-        "nickname": "Baby Kangaroo Tribbiani",
-        "favorite": "true"
     }
 
 ];
@@ -51,15 +43,15 @@ class Init {
         tableDiv.innerHTML = '';
 
         // delete any duplication
-        const seen = new Set();
-        let newContactList = contacts.filter(contact => {
-            const duplicate = seen.has(contact.id);
-            seen.add(contact.id);
-            return !duplicate
-        });
+        // const seen = new Set();
+        // let newContactList = contacts.filter(contact => {
+        //     const duplicate = seen.has(contact.id);
+        //     seen.add(contact.id);
+        //     return !duplicate
+        // });
 
-        for(let i in newContactList) {
-            const {id, name, phone, email, nickname, favorite} = newContactList[i];
+        for(let i in contacts) {
+            const {id, name, phone, email, nickname, favorite} = contacts[i];
             let tableRow = document.createElement('tr');
             tableRow.setAttribute('data-id', id);
             tableRow.classList.add('custom_row');
@@ -256,7 +248,9 @@ class UI {
     submitForm(obj) {
         // add info to the user interface 
         // here it is added to the object, but instead it would be saved into a database;
-        contacts.unshift(obj);
+        // contacts.push(obj);
+        let foundIndex = contacts.findIndex(x => x.id == obj.id);
+        contacts[foundIndex] = obj
 
         init.message('Contact Added', 'alert alert-success');
         $('#edit').modal('hide');
